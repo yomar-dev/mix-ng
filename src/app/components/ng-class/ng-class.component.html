@@ -5,10 +5,21 @@
 <button class="btn btn-warning" (click)="alerta = 'alert-warning'">Warning</button> &nbsp;
 <button class="btn btn-success" (click)="alerta = 'alert-success'">Success</button>
 
-<br><br>
+<br>
+<br>
 
 <h3 [ngClass]="{ 'text-danger': propiedades.danger, 'text-info': !propiedades.danger }">
   Hello World!!
 </h3>
 
 <button (click)="propiedades.danger = !propiedades.danger" class="btn btn-outline-primary">Cambiar Color</button>
+<br><br>
+
+
+<h3>Proceso Asíncrono</h3>
+
+<button (click)="ejecutar()" class="btn btn-primary" [disabled]="loading">
+  <i [ngClass]="{ 'fa-save': !loading, 'fa-sync fa-spin': loading }" class="fa"></i> &nbsp;
+  <span *ngIf="!loading">Guardar Cambios</span>
+  <span *ngIf="loading">Guardando</span>
+</button>

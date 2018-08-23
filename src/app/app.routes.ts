@@ -13,7 +13,8 @@ const APP_ROUTES: Routes = [
         children: [
             { path: 'new', component: NewUserComponent },
             { path: 'edit', component: EditUserComponent },
-            { path: 'details', component: DetailsUserComponent }
+            { path: 'details', component: DetailsUserComponent },
+            { path: '**', pathMatch: 'full', redirectTo: 'details' }
         ]
     },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
